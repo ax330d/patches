@@ -133,6 +133,8 @@ class MozPrefsPatcher(object):
         prefs['media.webvtt.regions.enabled'] = 'true'
         prefs['webgl.force-enabled'] = 'true'
 
+        prefs['xpinstall.signatures.required'] = 'false'
+
         self.prefs = prefs
         data = ''
         for key in sorted(prefs):
