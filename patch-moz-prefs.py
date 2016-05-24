@@ -5,13 +5,14 @@
 #
 # v 0.0.1     09-11-2014
 # v 0.0.2     03-03-2015
+# v 0.0.3     24-05-2016
 
 import re
 import os
 import argparse
 import ConfigParser
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 
 class AttributeDict(dict):
@@ -86,11 +87,13 @@ class MozPrefsPatcher(object):
         prefs = {}
 
         # This has been crashing for me too often
-        prefs['javascript.options.ion'] = 'false'
+        prefs['javascript.options.ion'] = 'true'
 
         # Disable e10s
         prefs['browser.tabs.remote.autostart'] = 'false'
         prefs['browser.tabs.remote.autostart.1'] = 'false'
+        prefs['browser.tabs.remote.autostart.2'] = 'false'
+        prefs['browser.tabs.remote.autostart.3'] = 'false'
 
         # Disable crash reporting and things
         prefs['datareporting.healthreport.service.firstRun'] = 'false'
@@ -98,6 +101,7 @@ class MozPrefsPatcher(object):
         prefs['datareporting.healthreport.uploadEnabled'] = 'false'
         prefs['dom.ipc.plugins.flash.subprocess.crashreporter.enabled'] = 'false'
         prefs['dom.ipc.plugins.reportCrashURL'] = 'false'
+        prefs['dom.max_script_run_time'] = 20
 
         # Safe fuzzing continuation
         prefs['browser.sessionstore.max_resumed_crashes'] = -1
