@@ -6,13 +6,14 @@
 # v 0.0.1     09-11-2014
 # v 0.0.2     03-03-2015
 # v 0.0.3     24-05-2016
+# v 0.0.4     09-06-2016
 
 import re
 import os
 import argparse
 import ConfigParser
 
-__version__ = '0.0.3'
+__version__ = '0.0.4'
 
 
 class AttributeDict(dict):
@@ -101,7 +102,8 @@ class MozPrefsPatcher(object):
         prefs['datareporting.healthreport.uploadEnabled'] = 'false'
         prefs['dom.ipc.plugins.flash.subprocess.crashreporter.enabled'] = 'false'
         prefs['dom.ipc.plugins.reportCrashURL'] = 'false'
-        prefs['dom.max_script_run_time'] = 20
+        prefs['dom.max_script_run_time'] = 30
+        prefs['dom.always_stop_slow_scripts'] = 'true'
 
         # Safe fuzzing continuation
         prefs['browser.sessionstore.max_resumed_crashes'] = -1
