@@ -139,6 +139,7 @@ class MozPrefsPatcher(object):
         prefs['media.webvtt.regions.enabled'] = 'true'
         prefs['webgl.force-enabled'] = 'true'
 
+        prefs['browser.sessionstore.interval'] = '1800000'
         prefs['xpinstall.signatures.required'] = 'false'
 
         self.prefs = prefs
